@@ -1,11 +1,16 @@
-Use
-###
+Demo
+====
 
-1. Add your this repository as a submodule and then add its submodules which includes the 
+![demo picture](demo/thumbs_up_demo.png)
+
+Use
+===
+
+1. Add this repository as a submodule to your main Qt project and then add its submodules which includes the 
    [FontAwesome repository](https://github.com/FortAwesome/Font-Awesome)
 
         git submodule add https://github.com/RossRogers/qml-font-awesome qml-font-awesome
-        git submodule --recursive git submodule update --init
+        git submodule foreach --recursive git submodule update --init
         
 2. Add `qml-font-awesome` with appropriate paths to your [`qml.qrc` file](http://doc.qt.io/qt-5/qtquick-deployment.html):
 
@@ -37,7 +42,7 @@ Use
         
         
 Updating Font-Awesome Version
-#############################
+=============================
 
 1. Clone and initialize submodules:
 
