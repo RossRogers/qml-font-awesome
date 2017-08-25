@@ -47,3 +47,20 @@ for l in open(update_path_dir + '/Font-Awesome/less/variables.less','r'):
             re.sub('-','_',srch.group('icon_name')) +
             ' = "\u'+ srch.group('icon_unicode') + '";\n')
 out.write('\n')
+
+
+svgs_dir = update_path_dir + '/svgs'
+try:
+    os.mkdir(svgs_dir)
+except:
+    pass
+
+for glyph in re.compile('<glyph glyph-name="([\w_-]+)"(?:.*\n*)?.*d="([^"]*)"').findall(open('./Font-Awesome/fonts/fontawesome-webfont.svg','r').read()):
+    name = glyph[0]
+    svg_path = glyph[1]
+    svg = open(svgs_dir + '/fa_' + name.replace('-','_') + '.svg','w')
+    svg.write('''<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg><g transform="scale(1,-1)">
+  <path d="%s"/>
+</g></svg>'''%svg_path)
+  

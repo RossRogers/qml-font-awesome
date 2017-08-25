@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg><g transform="scale(1,-1)">
+  <path d="M2048 0v-128h-2048v1536h128v-1408h1920zM1664 1024l256 -896h-1664v576l448 576l576 -576z"/>
+</g></svg>
